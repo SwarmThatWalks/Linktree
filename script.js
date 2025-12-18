@@ -7,10 +7,10 @@ const letters = document.querySelectorAll('#glow-text span');
 const delay = 150
 const repeatDelay = 10000
 const initialDelay = 2000
-const clickSound = new Audio('assets/soundeffect/bass1.wav');
+const clickSound = new Audio('assets/soundeffect/button3.wav');
 clickSound.volume = 0.5;
 const allButtons = document.querySelectorAll('.btn, .download-btn, .icon-btn, .link-icon');
-const closeSound = new Audio('assets/soundeffect/button1.mp3');
+const closeSound = new Audio('assets/soundeffect/button4.wav');
 closeSound.volume = 0.5;
 const cvSwitch = document.getElementById('cvSwitch');
 const cvLabel = document.getElementById('cvLabel');
@@ -395,4 +395,5 @@ if (bgVideo) {
     }
 } else {
     window.addEventListener("load", hidePreloader);
+
 }
