@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Francesco Presti | Linktree</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="preloader">
+  <div class="spinner"></div>
+</div>
+
+<video id="bgVideo" class="bg-video" autoplay muted loop>
+  <source src="assets/img/background.mp4" type="video/mp4">
+</video>
+
+<header class="header-container">
+    <h1 id="glow-text">
+        <span>F</span><span>R</span><span>A</span><span>N</span><span>C</span><span>E</span><span>S</span><span>C</span><span>O</span>
+        <span>&nbsp;</span>
+        <span>P</span><span>R</span><span>E</span><span>S</span><span>T</span><span>I</span>
+    </h1>
+
+    <div class="settings-group">
+        <div class="toggle-container">
+            <input type="checkbox" id="langToggle" class="toggle-input">
+            <label for="langToggle" class="toggle-slider"></label>
+            <span class="toggle-label lang-text">EN</span>
+        </div>
+        <div class="toggle-container">
+            <input type="checkbox" id="muteToggle" class="toggle-input">
+            <label for="muteToggle" class="toggle-slider"></label>
+            <span class="toggle-label sound-label">Sound</span>
+        </div>
+    </div>
+</header>
+
+<div class="main-layout">
+    
+    <div class="content-area">
+        
+        <div id="about-panel" class="content-panel active">
+            <div class="text-wrapper no-scroll" id="about-content">
+                
+            </div>
+        </div>
+
+        <div id="playlist-panel" class="content-panel">
+            <div class="title-with-icon playlist-header-container">
+                <div class="playlist-title-row">
+                    <h2 id="playlist-title">My Playlists</h2>
+                </div>
+                <div id="click-to-open" class="click-hint">click to open</div>
+            </div>
+            <div class="text-wrapper playlist-wrapper">
+                <div class="playlist-grid">
+                    <a href="https://youtube.com/playlist?list=PL0belo9KN1NPNUkUQRbYesmtRuFCojPLm&si=bxzvO65YViCO83Rn" target="_blank" class="playlist-card">
+                        <div class="playlist-img-container">
+                            <img src="assets/img/femboy_main.webp" class="playlist-img">
+                        </div>
+                        <span class="playlist-name">Femboy Main <img src="assets/img/youtube_icon.webp" class="yt-mini-icon"></span>
+                    </a>
+                    <a href="https://youtube.com/playlist?list=PL0belo9KN1NMLVsSl37BbrdsBPURjBfQU&si=AIh7k6uIGCfasJHD" target="_blank" class="playlist-card">
+                        <div class="playlist-img-container">
+                            <img src="assets/img/femboy_orch.webp" class="playlist-img">
+                        </div>
+                        <span class="playlist-name">Femboy Orchestral <img src="assets/img/youtube_icon.webp" class="yt-mini-icon"></span>
+                    </a>
+                    <a href="https://youtube.com/playlist?list=PL0belo9KN1NM6iHfCprzNkVUYDw44cOIq&si=QvJsk1cNRFu1BNwn" target="_blank" class="playlist-card">
+                        <div class="playlist-img-container">
+                            <img src="assets/img/femboy_edm.webp" class="playlist-img">
+                        </div>
+                        <span class="playlist-name">Femboy EDM <img src="assets/img/youtube_icon.webp" class="yt-mini-icon"></span>
+                    </a>
+                    <a href="https://youtube.com/playlist?list=PL0belo9KN1NP9I_DaAlEwNVIY6EjfIB5l&si=jF6tUS47ReKyWvVW" target="_blank" class="playlist-card">
+                        <div class="playlist-img-container">
+                            <img src="assets/img/femboy_slaugh.webp" class="playlist-img">
+                        </div>
+                        <span class="playlist-name">Femboy Slaughter <img src="assets/img/youtube_icon.webp" class="yt-mini-icon"></span>
+                    </a>
+                    <a href="https://youtube.com/playlist?list=PL0belo9KN1NPKO1m_kNscejU3Qo72IyxQ&si=fONRKmgnnIozCn6_" target="_blank" class="playlist-card">
+                        <div class="playlist-img-container">
+                            <img src="assets/img/femboy_relax.webp" class="playlist-img">
+                        </div>
+                        <span class="playlist-name">Femboy Relax <img src="assets/img/youtube_icon.webp" class="yt-mini-icon"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="nav-container">
+        <nav class="nav-menu">
+            <div class="nav-item active" data-target="about-panel">About Me</div>
+            <div class="nav-item" data-target="playlist-panel">My Playlists</div>
+            <a href="https://www.instagram.com/thewalkingswarm/" target="_blank" class="nav-item shop-nav">
+                <img src="assets/img/shop.webp" class="shop-icon-nav" alt="Shop">
+                <span id="shop-nav-text">My Shop</span>
+            </a>
+        </nav>
+    </div>
+
+</div>
+
+<div class="dev-warning" id="mobileWarning">
+  <span id="warning-text">⚠️ Optimized for desktop. Mobile features a simplified layout.</span>
+  <button class="close-warning" id="closeMobileWarning">&times;</button>
+</div>
+
+<footer>
+  <div class="footer-content">
+    <span>© 2025 By Francesco Presti</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
