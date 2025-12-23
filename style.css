@@ -58,20 +58,19 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.8s ease-in-out;
+  transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .preloader-text {
   font-family: 'OutfitBold', sans-serif;
   font-size: clamp(32px, 8vw, 64px);
   color: transparent;
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
   background-image: linear-gradient(to right, #ffffff 0%, #ffffff 50%, transparent 50%, transparent 100%);
   background-size: 200% 100%;
   background-position: 100% 0;
   -webkit-background-clip: text;
   background-clip: text;
-  animation: fluidFill 2.5s ease-in-out forwards;
+  animation: fluidFill 2.5s cubic-bezier(0.65, 0, 0.35, 1) forwards;
 }
 
 @keyframes fluidFill {
@@ -600,40 +599,42 @@ footer {
     }
 
     .playlist-wrapper {
-        padding: 0;
+        padding: 10px 0;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        height: 100%;
-        max-height: none;
-        overflow: hidden;
+        justify-content: flex-start;
+        height: auto;
+        max-height: 60vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
     .playlist-grid { 
         flex-direction: column;
         align-items: center;
-        gap: 20px;
+        gap: 10px;
         width: 100%;
         max-width: 380px;
-        flex: 1;
-        justify-content: center;
+        flex: none;
+        justify-content: flex-start;
+        padding-bottom: 30px;
     }
 
     .playlist-card { 
         width: 100%;
-        max-width: 360px;
+        max-width: 390px;
         flex-direction: row;
-        border-radius: 40px;
+        border-radius: 60px;
         padding: 0;
-        height: 80px;
+        height: 110px;
         border: 1px solid rgba(255,255,255,0.1);
     }
 
     .playlist-card:hover { transform: scale(1.02); }
 
     .playlist-img-container {
-        width: 80px;
-        height: 80px;
+        width: 110px;
+        height: 110px;
         border-radius: 50%;
         flex-shrink: 0;
     }
@@ -646,7 +647,7 @@ footer {
     }
 
     .playlist-name { 
-        font-size: 20px; 
+        font-size: 22px; 
         padding: 0; 
         margin-left: 18px; 
         width: auto; 
