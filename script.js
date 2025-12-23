@@ -46,8 +46,8 @@ const aboutTextData = {
 };
 
 const headings = {
-    EN: { playlist: "My Playlists", hint: "click to open", mobileHint: "scroll to see more" },
-    IT: { playlist: "Le Mie Playlist", hint: "clicca per aprire", mobileHint: "scorri per vedere altro" }
+    EN: { playlist: "My Playlists", hint: "click to open", mobileHint: "tap to open" },
+    IT: { playlist: "Le Mie Playlist", hint: "clicca per aprire", mobileHint: "tocca per aprire" }
 };
 
 const warningMsgs = {
@@ -268,14 +268,12 @@ const preloader = document.getElementById("preloader");
 
 function hidePreloader() {
     if (!preloader) return;
-    preloader.style.opacity = '1';
-    preloader.style.transition = 'opacity 0.6s ease';
     setTimeout(() => {
         preloader.style.opacity = '0';
         setTimeout(() => {
             preloader.style.display = 'none';
-        }, 600);
-    }, 300);
+        }, 800);
+    }, 2500);
 }
 
 if (bgVideo) {
