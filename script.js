@@ -46,8 +46,8 @@ const aboutTextData = {
 };
 
 const headings = {
-    EN: { playlist: "My Playlists", hint: "click to open", mobileHint: "tap to open" },
-    IT: { playlist: "Le Mie Playlist", hint: "clicca per aprire", mobileHint: "tocca per aprire" }
+    EN: { playlist: "My Playlists", hint: "click to open", mobileHint: "scroll to see more" },
+    IT: { playlist: "Le Mie Playlist", hint: "clicca per aprire", mobileHint: "scorri per vedere di più" }
 };
 
 const warningMsgs = {
@@ -287,3 +287,4 @@ if (bgVideo) {
 }
 
 window.addEventListener('resize', updateHints);
+
