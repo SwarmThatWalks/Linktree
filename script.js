@@ -272,8 +272,8 @@ function hidePreloader() {
         preloader.style.opacity = '0';
         setTimeout(() => {
             preloader.style.display = 'none';
-        }, 800);
-    }, 2500);
+        }, 1200);
+    }, 2800);
 }
 
 if (bgVideo) {
