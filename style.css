@@ -155,7 +155,7 @@ body {
 }
 
 .toggle-input:checked + .toggle-slider {
-    background: rgba(135, 247, 210, 0.7);
+    background: rgba(87, 52, 255, 0.51);
 }
 
 .toggle-input:checked + .toggle-slider::after {
@@ -726,3 +726,4 @@ footer {
 
     .footer-content { font-size: 10px; opacity: 0.5; }
 }
+
