@@ -23,18 +23,26 @@
         <span>P</span><span>R</span><span>E</span><span>S</span><span>T</span><span>I</span>
     </h1>
 
-    <div class="settings-group">
-        <div class="toggle-container">
-            <input type="checkbox" id="langToggle" class="toggle-input">
-            <label for="langToggle" class="toggle-slider"></label>
-            <span class="toggle-label lang-text">EN</span>
-        </div>
-        <div class="toggle-container">
-            <input type="checkbox" id="muteToggle" class="toggle-input">
-            <label for="muteToggle" class="toggle-slider"></label>
-            <span class="toggle-label sound-label">Sound</span>
-        </div>
+<div class="settings-group">
+    <div class="toggle-wrapper">
+        <input type="checkbox" id="langToggle" class="toggle-input">
+        <label for="langToggle" class="toggle-label">
+            <span class="lang-text">EN</span>
+            <span class="toggle-track">
+                <span class="toggle-thumb"></span>
+            </span>
+        </label>
     </div>
+    <div class="toggle-wrapper">
+        <input type="checkbox" id="muteToggle" class="toggle-input">
+        <label for="muteToggle" class="toggle-label">
+            <span class="sound-label">Sound</span>
+            <span class="toggle-track">
+                <span class="toggle-thumb"></span>
+            </span>
+        </label>
+    </div>
+</div>
 </header>
 
 <div class="main-layout">
@@ -119,3 +127,4 @@
 <script src="script.js"></script>
 </body>
 </html>
+
