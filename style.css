@@ -736,8 +736,8 @@ footer {
     .nav-item.active { 
         font-weight: bold;
         font-size: 15px; 
-        background: rgba(255, 255, 255, 0.1); 
-        color: #fff; 
+        background: rgb(255, 255, 255); 
+        color: #000; 
         transform: none;
         text-shadow: none;
     }
@@ -761,5 +761,6 @@ footer {
 
     .footer-content { font-size: 10px; opacity: 0.5; }
 }
+
 
 
