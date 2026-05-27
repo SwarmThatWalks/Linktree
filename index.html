@@ -23,39 +23,28 @@
         <span>P</span><span>R</span><span>E</span><span>S</span><span>T</span><span>I</span>
     </h1>
 
-<div class="settings-group">
-    <div class="toggle-wrapper">
-        <input type="checkbox" id="langToggle" class="toggle-input">
-        <label for="langToggle" class="toggle-label">
-            <span class="lang-text">EN</span>
-            <span class="toggle-track">
-                <span class="toggle-thumb"></span>
-            </span>
-        </label>
+    <div class="settings-group">
+        <button id="langBtn" class="ctrl-btn lang-btn">EN</button>
+        <button id="muteBtn" class="ctrl-btn sound-btn" aria-label="Toggle sound">
+            <svg class="icon-sound" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+            </svg>
+            <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                <line x1="23" y1="9" x2="17" y2="15"></line>
+                <line x1="17" y1="9" x2="23" y2="15"></line>
+            </svg>
+        </button>
     </div>
-    <div class="toggle-wrapper">
-        <input type="checkbox" id="muteToggle" class="toggle-input">
-        <label for="muteToggle" class="toggle-label">
-            <span class="sound-label">Sound</span>
-            <span class="toggle-track">
-                <span class="toggle-thumb"></span>
-            </span>
-        </label>
-    </div>
-</div>
 </header>
 
 <div class="main-layout">
-    
-    <div class="content-area">
-        
-        <div id="about-panel" class="content-panel active">
-            <div class="text-wrapper no-scroll" id="about-content">
-                
-            </div>
-        </div>
 
-        <div id="playlist-panel" class="content-panel">
+    <div class="content-area">
+
+        <div id="playlist-panel" class="content-panel active">
             <div class="title-with-icon playlist-header-container">
                 <div class="playlist-title-row">
                     <h2 id="playlist-title">My Playlists</h2>
@@ -102,8 +91,7 @@
 
     <div class="nav-container">
         <nav class="nav-menu">
-            <div class="nav-item active" data-target="about-panel">About Me</div>
-            <div class="nav-item" data-target="playlist-panel">My Playlists</div>
+            <div class="nav-item active" data-target="playlist-panel">My Playlists</div>
             <a href="https://www.instagram.com/thewalkingswarm/" target="_blank" class="nav-item shop-nav">
                 <img src="assets/img/shop.webp" class="shop-icon-nav" alt="Shop">
                 <span id="shop-nav-text">My Shop</span>
@@ -127,4 +115,3 @@
 <script src="script.js"></script>
 </body>
 </html>
-
