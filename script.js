@@ -12,7 +12,6 @@ const mobileWarning = document.getElementById('mobileWarning');
 const closeMobileWarning = document.getElementById('closeMobileWarning');
 const warningText = document.getElementById('warning-text');
 
-const aboutContent = document.getElementById('about-content');
 const playlistTitle = document.getElementById('playlist-title');
 const clickHint = document.getElementById('click-to-open');
 const shopNavText = document.getElementById('shop-nav-text');
@@ -20,29 +19,8 @@ const shopNavText = document.getElementById('shop-nav-text');
 let currentActiveIndex = 0;
 
 const navTranslations = {
-    EN: ["About Me", "My Playlists", "My Shop"],
-    IT: ["Chi Sono", "Le Mie Playlist", "Mio Negozio"]
-};
-
-const aboutTextData = {
-    EN: `
-    <div style="display:flex; align-items:center; justify-content:center; width:100%; flex-direction:column; text-align:center;">
-        <img src="assets/img/foto.webp" class="profile-img">
-        <div>
-            <h3 style="margin:10px 0 5px 0; color:#fff; font-size:28px;">Francesco Presti</h3>
-            <p style="margin:0; font-size:16px; color:#aaa;">Software & Web Development | Graphic Design</p>
-        </div>
-    </div>
-    `,
-    IT: `
-    <div style="display:flex; align-items:center; justify-content:center; width:100%; flex-direction:column; text-align:center;">
-        <img src="assets/img/foto.webp" class="profile-img">
-        <div>
-            <h3 style="margin:10px 0 5px 0; color:#fff; font-size:28px;">Francesco Presti</h3>
-            <p style="margin:0; font-size:16px; color:#aaa;">Sviluppo Software & Web | Graphic Design</p>
-        </div>
-    </div>
-    `
+    EN: ["My Playlists", "My Shop"],
+    IT: ["Le Mie Playlist", "Mio Negozio"]
 };
 
 const headings = {
@@ -60,9 +38,9 @@ let speedAnimFrame;
 
 function burstVideo() {
     cancelAnimationFrame(speedAnimFrame);
-    if(!bgVideo) return;
+    if (!bgVideo) return;
     bgVideo.play();
-    
+
     let startTime = null;
     const peakSpeed = 12.0;
     const duration = 1200;
@@ -71,10 +49,8 @@ function burstVideo() {
         if (!startTime) startTime = timestamp;
         const elapsed = timestamp - startTime;
         const progress = Math.min(elapsed / duration, 1);
-        
         const easedProgress = 1 - Math.pow(1 - progress, 4);
         bgVideo.playbackRate = peakSpeed - (easedProgress * (peakSpeed - 1.0));
-
         if (progress < 1) {
             speedAnimFrame = requestAnimationFrame(animate);
         } else {
@@ -89,32 +65,32 @@ function playSound(audio) {
         audio.pause();
     }
     audio.currentTime = 0;
-    audio.play().catch(()=>{});
+    audio.play().catch(() => {});
 }
 
 if (closeMobileWarning && mobileWarning) {
-  closeMobileWarning.addEventListener('click', () => {
-    playSound(closeSound);
-    mobileWarning.classList.add('fade-out');
-    setTimeout(() => {
-      mobileWarning.style.display = 'none';
-    }, 400);
-  });
+    closeMobileWarning.addEventListener('click', () => {
+        playSound(closeSound);
+        mobileWarning.classList.add('fade-out');
+        setTimeout(() => {
+            mobileWarning.style.display = 'none';
+        }, 400);
+    });
 }
 
 function glowSequence() {
-  letters.forEach(letter => letter.classList.remove('glow'));
-  letters.forEach((letter, index) => {
-    setTimeout(() => {
-      letter.classList.add('glow');
-      if (index > 0) letters[index - 1].classList.remove('glow');
-      if (index === letters.length - 1) {
+    letters.forEach(letter => letter.classList.remove('glow'));
+    letters.forEach((letter, index) => {
         setTimeout(() => {
-          letter.classList.remove('glow');
-        }, delay);
-      }
-    }, index * delay);
-  });
+            letter.classList.add('glow');
+            if (index > 0) letters[index - 1].classList.remove('glow');
+            if (index === letters.length - 1) {
+                setTimeout(() => {
+                    letter.classList.remove('glow');
+                }, delay);
+            }
+        }, index * delay);
+    });
 }
 setTimeout(glowSequence, initialDelay);
 setInterval(glowSequence, repeatDelay);
@@ -128,12 +104,12 @@ navItems.forEach((item, index) => {
         if (window.innerWidth > 900) {
             burstVideo();
         }
-        
+
         currentActiveIndex = index;
 
         navItems.forEach(n => n.classList.remove('active'));
         item.classList.add('active');
-        
+
         const targetId = item.getAttribute('data-target');
         switchPanel(targetId);
     });
@@ -188,38 +164,34 @@ function updateHints() {
     }
 }
 
-const muteToggle = document.getElementById("muteToggle");
-let isMuted = localStorage.getItem("muted") === "true" ? true : false;
-muteToggle.checked = !isMuted; 
+const muteBtn = document.getElementById('muteBtn');
+let isMuted = localStorage.getItem("muted") === "true";
 
 function updateMuteState() {
-    const audioElements = document.querySelectorAll("audio");
-    audioElements.forEach(a => a.muted = isMuted);
+    muteBtn.classList.toggle('is-muted', isMuted);
     clickSound.muted = isMuted;
     closeSound.muted = isMuted;
     localStorage.setItem("muted", isMuted);
 }
 
-muteToggle.addEventListener("change", () => {
-    isMuted = !muteToggle.checked;
+muteBtn.addEventListener('click', () => {
+    isMuted = !isMuted;
     updateMuteState();
 });
 updateMuteState();
 
-const langToggle = document.getElementById("langToggle");
-const langLabel = document.querySelector(".lang-text");
+const langBtn = document.getElementById('langBtn');
 let currentLang = localStorage.getItem("lang") || "EN";
 
 function setLanguage(lang) {
     currentLang = lang;
     localStorage.setItem("lang", lang);
-    
+
     const elementsToFade = [
         ...navItems,
         playlistTitle,
         clickHint,
-        aboutContent,
-        langLabel,
+        langBtn,
         warningText,
         shopNavText
     ].filter(el => el !== null);
@@ -231,19 +203,17 @@ function setLanguage(lang) {
     });
 
     setTimeout(() => {
-        langLabel.textContent = lang;
-        
+        langBtn.textContent = lang;
+
         navItems.forEach((item, index) => {
-            if(index < 2) {
+            if (item.tagName !== 'A') {
                 item.textContent = navTranslations[lang][index];
-            } else {
-                shopNavText.textContent = navTranslations[lang][index];
             }
         });
 
+        shopNavText.textContent = navTranslations[lang][1];
         playlistTitle.textContent = headings[lang].playlist;
         updateHints();
-        aboutContent.innerHTML = aboutTextData[lang];
 
         if (warningText) {
             warningText.textContent = warningMsgs[lang];
@@ -257,11 +227,11 @@ function setLanguage(lang) {
     }, 300);
 }
 
-langToggle.checked = (currentLang === 'IT');
+langBtn.textContent = currentLang;
 setLanguage(currentLang);
 
-langToggle.addEventListener("change", () => {
-  setLanguage(langToggle.checked ? "IT" : "EN");
+langBtn.addEventListener('click', () => {
+    setLanguage(currentLang === 'EN' ? 'IT' : 'EN');
 });
 
 const preloader = document.getElementById("preloader");
@@ -277,7 +247,7 @@ function hidePreloader() {
 }
 
 if (bgVideo) {
-    if (bgVideo.readyState >= 4) { 
+    if (bgVideo.readyState >= 4) {
         hidePreloader();
     } else {
         bgVideo.addEventListener('canplaythrough', hidePreloader);
@@ -287,4 +257,3 @@ if (bgVideo) {
 }
 
 window.addEventListener('resize', updateHints);
-
