@@ -15,12 +15,13 @@ const warningText = document.getElementById('warning-text');
 const playlistTitle = document.getElementById('playlist-title');
 const clickHint = document.getElementById('click-to-open');
 const shopNavText = document.getElementById('shop-nav-text');
+const letterboxdNavText = document.getElementById('letterboxd-nav-text');
 
 let currentActiveIndex = 0;
 
 const navTranslations = {
-    EN: ["My Playlists", "My Shop"],
-    IT: ["Le Mie Playlist", "Mio Negozio"]
+    EN: ["My Playlists", "My Shop", "Letterboxd"],
+    IT: ["Le Mie Playlist", "Mio Negozio", "Letterboxd"]
 };
 
 const headings = {
@@ -193,7 +194,8 @@ function setLanguage(lang) {
         clickHint,
         langBtn,
         warningText,
-        shopNavText
+        shopNavText,
+        letterboxdNavText
     ].filter(el => el !== null);
 
     elementsToFade.forEach(el => {
@@ -212,6 +214,7 @@ function setLanguage(lang) {
         });
 
         shopNavText.textContent = navTranslations[lang][1];
+        if (letterboxdNavText) letterboxdNavText.textContent = navTranslations[lang][2];
         playlistTitle.textContent = headings[lang].playlist;
         updateHints();
 
